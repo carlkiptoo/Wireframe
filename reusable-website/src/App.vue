@@ -4,6 +4,10 @@ import HeroSection from './components/HeroSection.vue'
 import FeatureCards from './components/FeatureCards.vue'
 import AboutSection from './components/AboutSection.vue'
 import TestimonialSection from './components/TestimonialSection.vue'
+import ContactSection from './components/ContactSection.vue'
+
+
+
 const features = [
   {
     title: 'Feature 1',
@@ -82,6 +86,7 @@ const testimonialData = {
     :testimonials="testimonialData.testimonials"
   
   />
+  <ContactSection />
 </template>
 
 <style scoped>
