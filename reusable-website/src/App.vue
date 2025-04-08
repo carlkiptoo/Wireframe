@@ -3,6 +3,7 @@ import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import FeatureCards from './components/FeatureCards.vue'
 import AboutSection from './components/AboutSection.vue'
+import TestimonialSection from './components/TestimonialSection.vue'
 const features = [
   {
     title: 'Feature 1',
@@ -16,7 +17,7 @@ const features = [
   },
   {
     title: 'Feature 3',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.', 
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
     image: 'https://source.unsplash.com/random/400x200',
   }
 ]
@@ -47,18 +48,40 @@ const aboutSectionData = {
     }
   ]
 }
+
+const testimonialData = {
+  title: 'Testimonials',
+  testimonials: [
+    {
+      name: 'Kirui',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl eu ultricies ultricies, nunc nisi ultrices nisi, euismod ultricies nisl.',
+      avatar: 'https://source.unsplash.com/random/60x60',
+    },
+    {
+      name: 'Kirui',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl eu ultricies ultricies, nunc nisi ultrices nisi, euismod ultricies nisl.',
+      avatar: 'https://source.unsplash.com/random/60x60',
+    },
+    {
+      name: 'Kirui',
+      text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nisl eu ultricies ultricies, nunc nisi ultrices nisi, euismod ultricies nisl.',
+      avatar: 'https://source.unsplash.com/random/60x60',
+    }
+  ]
+}
 </script>
 
 <template>
- <NavBar />
- <HeroSection />
- <FeatureCards :features="features" />
- <AboutSection
- :title="aboutSectionData.title"
- :description="aboutSectionData.description"
- :features="aboutSectionData.features"
- 
- />
+  <NavBar />
+  <HeroSection />
+  <FeatureCards :features="features" />
+  <AboutSection :title="aboutSectionData.title" :description="aboutSectionData.description"
+    :features="aboutSectionData.features" />
+  <TestimonialSection 
+    :title="testimonialData.title"
+    :testimonials="testimonialData.testimonials"
+  
+  />
 </template>
 
 <style scoped>
@@ -68,9 +91,11 @@ const aboutSectionData = {
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
